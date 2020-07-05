@@ -8,6 +8,8 @@ class Message extends Model
 {
     protected $fillable = ['title', 'content', 'user_id'];
 
+    // protected $dateFormat = 'Y-M-D[T]H:m:s.Z';
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -18,4 +20,6 @@ class Message extends Model
         // То же самое можно было бы записать иначе:
         // return $this->belongsTo('App\User');
     }
+
+
 }

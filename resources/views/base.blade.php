@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid px-0">
         <div class="row">
             <header class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,14 +51,14 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    {{-- <ul class="navbar-nav">
                       <li class="nav-item">
                         <a class="nav-link" href="{{ route('messages.index') }}">Сообщения</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ route('roles.index') }}">Роли</a>
                       </li>
-                    </ul>
+                    </ul> --}}
                   </div>
                   <a href="{{ route('logout') }}"
                      onclick="event.preventDefault();
@@ -76,7 +76,13 @@
             </header>
         </div>
         <div id="main" class="row">
-            <div class="col-8 offset-2">
+            <div class="col-4 border-right">
+                <div class="list-group list-group-flush">
+                  <a href="{{ route('messages.index') }}" class="list-group-item list-group-item-action">Сообщения</a>
+                  <a href="{{ route('roles.index') }}" class="list-group-item list-group-item-action">Роли</a>
+                </div>
+            </div>
+            <div class="col-8">
                 <article>
                     @yield('main')
                     @if ($errors->count())

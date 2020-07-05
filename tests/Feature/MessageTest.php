@@ -31,6 +31,20 @@ class MessageTest extends TestCase
         // Ссылка на объект записывается в переменную $message.
         $message = factory(Message::class)->create();
 
+        // $reflFunc = new \ReflectionFunction('Message::create');
+        // $reflFunc = new \ReflectionMethod('\Illuminate\Database\Eloquent\Model', 'bootIfNotBooted');
+        // print $reflFunc->getFileName() . ':' . $reflFunc->getStartLine();
+        // die();
+
+        // dd((Message::create(['title' => 'Тест', 'content' => 'тест', 'user_id' => factory(User::class)->create()->id]))->toArray());
+
+        // $table = $message->getTable();
+        // $message = $message->toArray();
+
+        // dd($message);
+        // unset($message['created_at']);
+        // unset($message['updated_at']);
+
         // assertDatabaseHas() проверяет таблицу на наличие указанных данных.
         // $message->getTable() возвращает имя таблицы БД ⁠— messages.
         // $message->toArray() возвращает массив значений свойств.
